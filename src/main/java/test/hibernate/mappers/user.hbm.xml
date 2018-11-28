@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="test.hibernate.entity">
+    <!--
+        配置实体类到表的基本映射
+          name:实体类名称
+          table:表名
+    -->
+    <class name="User" table="t_user">
+        <!--
+          主键
+          id标签配置主键
+            name:成员属性
+            column:字段名称
+        -->
+        <id name="id" column="id">
+            <!--
+              主键采用自动递增(数据库支持自增长)
+            -->
+            <generator class="native"></generator>
+        </id>
+        <!--
+          普通属性到表字段的映射
+             name:属性名称
+             column:字段名称
+        -->
+        <property name="userName" column="user_name" ></property>
+        <property name="userPwd" column="user_pwd"></property>
+    </class>
+</hibernate-mapping>
